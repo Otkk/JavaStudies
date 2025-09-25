@@ -4,14 +4,19 @@ public class Aposta {
     private static int proximoId = 1;
     private int idAposta;
     private double valorAposta;
-    private String palpiteCavalo; // Adicione um palpite para o cavalo
-    private int idCorrida;
+    private int palpiteCavalo; 
+    //private int idCorrida;
+    private Corrida c;
 
-    public Aposta(double valorAposta, String palpiteCavalo, int idCorrida) {
+    public Aposta(double valorAposta, int palpiteCavalo) {
         this.idAposta = proximoId++;
         this.valorAposta = valorAposta;
         this.palpiteCavalo = palpiteCavalo;
-        this.idCorrida = idCorrida;
+        //this.idCorrida = idCorrida;
+    }
+    
+    public Corrida getCorrida(){
+        return c;
     }
 
     public int getIdAposta() {
@@ -22,11 +27,8 @@ public class Aposta {
         return valorAposta;
     }
 
-    public String getPalpiteCavalo() {
+    public int getPalpiteCavalo() {
         return palpiteCavalo;
     }
 
-    public int getIdCorrida() {
-        return idCorrida;
-    }
 }
